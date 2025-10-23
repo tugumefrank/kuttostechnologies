@@ -27,17 +27,17 @@ const services = [
 
 const Services = () => {
   return (
-    <section id="services" className="py-24 bg-gray-900/20">
+    <section id="services" className="py-24 bg-background">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
+          transition={{ duration: 0.8, ease: "easeInOut" }}
           className="text-center mb-12"
         >
           <h2 className="text-3xl font-bold font-heading text-white">Our Services</h2>
-          <p className="mt-4 text-lg text-k-silver">
+          <p className="mt-4 text-lg text-k-silver/80">
             We offer a comprehensive suite of services to bring your vision to life.
           </p>
         </motion.div>
@@ -48,11 +48,11 @@ const Services = () => {
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.8, delay: index * 0.2 }}
-              className="bg-background/50 p-6 rounded-lg border border-white/10"
+              transition={{ duration: 0.8, delay: index * 0.1, ease: "easeInOut" }}
+              className="bg-gradient-to-br from-white/5 to-transparent p-6 rounded-lg border border-white/10 shadow-lg shadow-black/20"
             >
               <h3 className="text-xl font-bold font-heading text-white">{service.title}</h3>
-              <p className="mt-2 text-k-silver">{service.description}</p>
+              <p className="mt-2 text-k-silver/80">{service.description}</p>
             </motion.div>
           ))}
         </div>

@@ -14,35 +14,35 @@ const technologies = [
 
 const Technologies = () => {
   return (
-    <section id="technologies" className="py-24 bg-background">
+    <section id="technologies" className="py-24 bg-gray-900/20">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
+          transition={{ duration: 0.8, ease: "easeInOut" }}
           className="text-center mb-12"
         >
           <h2 className="text-3xl font-bold font-heading text-white">Technologies We Use</h2>
-          <p className="mt-4 text-lg text-k-silver">
+          <p className="mt-4 text-lg text-k-silver/80">
             We work with the latest and greatest technologies to deliver robust solutions.
           </p>
         </motion.div>
-        <div className="flex flex-wrap justify-center items-center gap-8">
+        <div className="flex flex-wrap justify-center items-center gap-12">
           {technologies.map((tech, index) => (
             <motion.div
               key={tech.name}
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.8, delay: index * 0.2 }}
-              className="grayscale hover:grayscale-0 transition-all"
+              transition={{ duration: 0.8, delay: index * 0.1, ease: "easeInOut" }}
+              className="grayscale hover:grayscale-0 hover:scale-110 transition-all"
             >
               <Image
                 src={tech.logo}
                 alt={tech.name}
-                width={80}
-                height={80}
+                width={70}
+                height={70}
                 className="dark:invert"
               />
             </motion.div>

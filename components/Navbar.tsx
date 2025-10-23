@@ -34,9 +34,9 @@ const Navbar = () => {
     <motion.nav
       initial={{ y: -100 }}
       animate={{ y: 0 }}
-      transition={{ duration: 0.5 }}
+      transition={{ duration: 0.5, ease: "easeInOut" }}
       className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
-        scrolled ? "bg-background/80 backdrop-blur-sm" : "bg-transparent"
+        scrolled ? "border-b border-white/10 bg-background/50 backdrop-blur-md" : "bg-transparent"
       }`}
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -68,7 +68,7 @@ const Navbar = () => {
             <Link
               href="#contact"
               onClick={(e) => smoothScroll(e, "#contact")}
-              className="ml-4 px-4 py-2 border border-k-blue text-k-blue rounded-md text-sm font-medium hover:bg-k-blue hover:text-white transition-colors"
+              className="ml-4 px-4 py-2 border border-transparent text-k-silver rounded-md text-sm font-medium hover:bg-k-blue/20 hover:text-white transition-colors"
             >
               Get in Touch
             </Link>
@@ -77,7 +77,7 @@ const Navbar = () => {
             <button
               onClick={() => setIsOpen(!isOpen)}
               type="button"
-              className="bg-gray-900 inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white"
+              className="bg-transparent inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white focus:outline-none"
             >
               <span className="sr-only">Open main menu</span>
               {isOpen ? (
@@ -95,7 +95,7 @@ const Navbar = () => {
       </div>
 
       {isOpen && (
-        <div className="md:hidden">
+        <div className="md:hidden bg-background/80 backdrop-blur-md">
           <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
             {navLinks.map((link) => (
               <Link
